@@ -71,21 +71,7 @@ const Registration = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="presidentTitle">President Title:</label>
-          <select
-            id="presidentTitle"
-            name="presidentTitle"
-            value={formData.presidentTitle}
-            onChange={handleChange}
-          >
-            <option value="Mr.">Mr.</option>
-            <option value="Mrs.">Mrs.</option>
-            <option value="Miss.">Miss.</option>
-          </select>
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="presidentName">President Name:</label>
+          <label htmlFor="presidentName">Register By:</label>
           <input
             type="text"
             id="presidentName"
@@ -132,6 +118,7 @@ const Registration = () => {
       </form>
 
       <div className="footer">
+      <a href='/login' style={{ marginRight: '20px' }}>Sign In</a>
         <p>By registering, you agree to our <a href="/terms">Privacy Policies and Terms & Conditions</a>.</p>
       </div>
 
@@ -141,8 +128,8 @@ const Registration = () => {
         <ul>
         <li>Step 1: Select the correct savings month based on the previous savings month.</li>
             <li>Step 2: Confirm all entries and check balance after setting.</li>
-            <li>Step 3: Proceed to complete registration after confirming the savings month.</li>
-          {/* Add more steps */}
+            <li>Step 3: Proceed to complete registration after confirming the savings month.</li>
+ 
         </ul>
       </div>
     </div>

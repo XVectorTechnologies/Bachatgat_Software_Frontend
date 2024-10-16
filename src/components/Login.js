@@ -10,14 +10,13 @@ const Login = () => {
     member: '',
     password: '',
   });
-const TestAPI = () =>
-{
-  const url='https://jsonplaceholder.typicode.com/users/1'
-  axios.get(url).then(
-    response =>{
-      console.log(response.data.name)
-    } )
-}
+  const TestAPI = () => {
+    const url = 'https://jsonplaceholder.typicode.com/users/1'
+    axios.get(url).then(
+      response => {
+        console.log(response.data.name)
+      })
+  }
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -25,9 +24,9 @@ const TestAPI = () =>
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle login functionality here
-    console.log(formData);    
+    console.log(formData);
   };
- 
+
   return (
     <div className="login-container">
       <h2>Welcome to Bachatgat App!</h2>
@@ -42,18 +41,16 @@ const TestAPI = () =>
             onChange={handleChange}
           />
         </div>
+
         <div className="form-group">
-          <label htmlFor="member">Member:</label>
-          <select
-            id="member"
-            name="member"
-            value={formData.member}
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
             onChange={handleChange}
-          >
-            <option value="">Select Member</option>
-            <option value="Pavan Gore">Pavan Gore</option>
-            {/* Add more members here */}
-          </select>
+          />
         </div>
 
         <div className="form-group">
@@ -67,14 +64,16 @@ const TestAPI = () =>
           />
         </div>
 
-        <button type="submit" onClick={() =>  TestAPI()
+        <button type="submit" onClick={() => TestAPI()
         }> Login</button>
 
       </form>
-
+     
       <div className="footer">
-        <a href="/forgot-password">Forgot Password?</a>
-      </div>
+  <a href='/login' style={{ marginRight: '20px' }}>Sign In</a>
+  <a href="/forgot-password">Forgot Password?</a>
+</div>
+
     </div>
   );
 };
