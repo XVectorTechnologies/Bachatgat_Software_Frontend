@@ -1,7 +1,8 @@
 // src/Login.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -10,13 +11,19 @@ const Login = () => {
     member: '',
     password: '',
   });
+
+  // useNavigate hook to programmatically navigate
+  const navigate = useNavigate();
+
   const TestAPI = () => {
-    const url = 'https://jsonplaceholder.typicode.com/users/1'
-    axios.get(url).then(
-      response => {
-        console.log(response.data.name)
-      })
-  }
+    const url = 'https://jsonplaceholder.typicode.com/users/1';
+    axios.get(url).then((response) => {
+      console.log(response.data.name);
+      // Navigate to home page after API call success
+      navigate('/home'); // Redirects to the home page
+    });
+  };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -25,6 +32,8 @@ const Login = () => {
     e.preventDefault();
     // Handle login functionality here
     console.log(formData);
+    // After login, navigate to home
+    navigate('/home');
   };
 
   return (
@@ -64,16 +73,13 @@ const Login = () => {
           />
         </div>
 
-        <button type="submit" onClick={() => TestAPI()
-        }> Login</button>
-
+        <button type="submit" onClick={TestAPI}>Login</button>
       </form>
-     
-      <div className="footer">
-  <a href='/login' style={{ marginRight: '20px' }}>Sign In</a>
-  <a href="/forgot-password">Forgot Password?</a>
-</div>
 
+      <div className="footer">
+        <a href='/register' style={{ marginRight: '20px' }}>Sign Up</a>
+        <a href="/forgot-password">Forgot Password?</a>
+      </div>
     </div>
   );
 };
