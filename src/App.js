@@ -4,6 +4,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
 import MemberRegistration from './components/Member-Registration';
+// import Members from './components/MembersPage'
+import MembersPage from './components/MembersPage';
 
 
 
@@ -19,6 +21,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home/>} />
         <Route path="/member-registration" element={<MemberRegistration/>}/>
+        <Route path="/members" element={<MembersPage/>}/>
 
       </Routes>
     </div>
