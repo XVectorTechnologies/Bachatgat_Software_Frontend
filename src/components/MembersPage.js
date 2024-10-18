@@ -1,6 +1,5 @@
 import React from 'react';
-import './MembersPage.css'; // Create this file for custom styling
-
+import '../index.css'; // Create this file for custom styling
 
 // Mock data for the members, replace it with real data from your API or database
 const membersData = [
@@ -15,85 +14,86 @@ const membersData = [
     entry_year: 2022,
     mobile: '9876543210',
     email: 'johndoe@example.com',
-    password: '******',
+    password: '',
     created_at: '2022-01-10 10:30:00',
     updated_at: '2023-02-15 14:20:00'
   },
   {
-    id: 2,
-    pid: '550e8400-e29b-41d4-a716-446655440002',
-    bachatgat_id: 102,
-    member_ids: ['550e8400-e29b-41d4-a716-446655440003'],
+    // id: 2,
+    // pid: '550e8400-e29b-41d4-a716-446655440002',
+    // bachatgat_id: 102,
+    // member_ids: ['550e8400-e29b-41d4-a716-446655440003'],
     name: 'Jane Smith',
     role: 'Chairperson',
     entry_month: 'March',
     entry_year: 2021,
     mobile: '9876543211',
     email: 'janesmith@example.com',
-    password: '******',
+    password: '',
     created_at: '2021-03-15 09:45:00',
     updated_at: '2022-06-12 12:15:00'
   },
   {
-    id: 2,
-    pid: '550e8400-e29b-41d4-a716-446655440002',
-    bachatgat_id: 102,
-    member_ids: ['550e8400-e29b-41d4-a716-446655440003'],
+    // id: 2,
+    // pid: '550e8400-e29b-41d4-a716-446655440002',
+    // bachatgat_id: 102,
+    // member_ids: ['550e8400-e29b-41d4-a716-446655440003'],
     name: 'Jane Smith',
     role: 'Chairperson',
     entry_month: 'March',
     entry_year: 2021,
     mobile: '9876543211',
     email: 'janesmith@example.com',
-    password: '******',
+    password: '',
     created_at: '2021-03-15 09:45:00',
     updated_at: '2022-06-12 12:15:00'
   },
   {
-    id: 2,
-    pid: '550e8400-e29b-41d4-a716-446655440002',
-    bachatgat_id: 102,
-    member_ids: ['550e8400-e29b-41d4-a716-446655440003'],
+    // id: 2,
+    // pid: '550e8400-e29b-41d4-a716-446655440002',
+    // bachatgat_id: 102,
+    // member_ids: ['550e8400-e29b-41d4-a716-446655440003'],
     name: 'Jane Smith',
     role: 'Chairperson',
     entry_month: 'March',
     entry_year: 2021,
     mobile: '9876543211',
     email: 'janesmith@example.com',
-    password: '******',
+    password: '',
     created_at: '2021-03-15 09:45:00',
     updated_at: '2022-06-12 12:15:00'
   },
   {
-    id: 2,
-    pid: '550e8400-e29b-41d4-a716-446655440002',
-    bachatgat_id: 102,
-    member_ids: ['550e8400-e29b-41d4-a716-446655440003'],
+    // id: 2,
+    // pid: '550e8400-e29b-41d4-a716-446655440002',
+    // bachatgat_id: 102,
+    // member_ids: ['550e8400-e29b-41d4-a716-446655440003'],
     name: 'Jane Smith',
     role: 'Chairperson',
     entry_month: 'March',
     entry_year: 2021,
     mobile: '9876543211',
     email: 'janesmith@example.com',
-    password: '******',
+    password: '',
     created_at: '2021-03-15 09:45:00',
     updated_at: '2022-06-12 12:15:00'
   },
   {
-    id: 2,
-    pid: '550e8400-e29b-41d4-a716-446655440002',
-    bachatgat_id: 102,
-    member_ids: ['550e8400-e29b-41d4-a716-446655440003'],
+    // id: 2,
+    // pid: '550e8400-e29b-41d4-a716-446655440002',
+    // bachatgat_id: 102,
+    // member_ids: ['550e8400-e29b-41d4-a716-446655440003'],
     name: 'Jane Smith',
     role: 'Chairperson',
     entry_month: 'March',
     entry_year: 2021,
     mobile: '9876543211',
     email: 'janesmith@example.com',
-    password: '******',
+    password: '',
     created_at: '2021-03-15 09:45:00',
     updated_at: '2022-06-12 12:15:00'
-  }
+  },
+  
   // Add more member data as needed
 ];
 
@@ -116,15 +116,21 @@ const MemberCard = ({ member }) => {
 // Main component to display all members in a grid layout
 const MembersPage = () => {
   return (
-    <div className="container">
+    <div className=".container_Members">
       <h2>Bachat Gat Members</h2>
       <div className="grid">
         {membersData.map((member) => (
-          <MemberCard key={member.id} member={member} />
+          <MemberCard key={member.name} member={member} />
         ))}
+      </div>
+      
+      {/* Home and About buttons */}
+      <div className="buttons">
+        <button onClick={() => window.location.href = '/home'}>Home</button>
+        <button onClick={() => window.location.href = '/about'}>About</button>
       </div>
     </div>
   );
 };
 
-export default MembersPage;
+export default MembersPage;
