@@ -13,8 +13,6 @@
 /* Heading */
 h2 {
   text-align: center;
-  margin-top: 80px;
-  margin-bottom: 10px;
   font-size: 1.8rem;
   color: #000000;
   padding: 0px;
@@ -169,7 +167,7 @@ button:hover {
 .login-container {
   width: 100%;
   max-width: 400px;
-  margin-top: 65px;
+  margin-top: 95px;
   margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
@@ -402,11 +400,12 @@ input[type="radio"]:checked ~ .dot {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   width: 100%;
+  color: #000000;
 
 }
 
 body {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -415,10 +414,11 @@ body {
 }
 
 .container {
+  margin-top: 40px;
   max-width: 1000px;
   width: 100%;
   background-color: #fff;
-  padding: 8px 30px;
+  padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
@@ -568,3 +568,126 @@ form .button input:hover {
     flex-direction: column;
   }
 }
+/*-----------Reset Password-------------------*/
+.reset-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #8e44ad, #3498db);
+}
+
+.reset-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  width: 100%;
+}
+
+.shapes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.shapes div {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #9c88ff;
+}
+
+.cube {
+  background-color: #4cd137;
+  transform: rotate(45deg);
+  width: 30px;
+  height: 30px;
+}
+
+.ring {
+  border: 2px solid #fbc531;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.pill {
+  background: linear-gradient(135deg, #8e44ad, #3498db);
+  border-radius: 30px;
+  width: 30px;
+  height: 10px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.ignore-text {
+  font-size: 0.85rem;
+  color: #636e72;
+  margin-bottom: 20px;
+}
+
+.email-input {
+  margin-bottom: 20px;  /* Space between input and button */
+}
+
+.email-input input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #dcdde1;
+}
+
+.button {
+  margin-top: 15px; /* Add space between input and login button */
+}
+
+.button input {
+  width: 100%;
+  padding: 10px;
+  background-color: #9c88ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button input:hover {
+  background-color: #8e44ad;
+}
+
+
+
+/*-------------deposit-form-----------------*/
+
+body {
+  background-color: #e9f3ff;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  border: none;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+

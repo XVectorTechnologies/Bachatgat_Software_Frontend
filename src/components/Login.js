@@ -79,8 +79,8 @@ const Login = () => {
       </form>
 
       <div className="footer">
-        <a href='/member-registration' style={{ marginRight: '20px' }}>Sign Up</a>
-        <a href="/forgot-password">Forgot Password?</a>
+        <a href='/register' style={{ marginRight: '20px' }}>Sign Up</a>
+        <a href="/resetpassword">Forgot Password?</a>
       </div>
     </div>
   );

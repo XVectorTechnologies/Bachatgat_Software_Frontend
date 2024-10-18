@@ -51,7 +51,7 @@ const SavingsAccount = () => {
 
             <div className="row">
               <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/monthly-report')}>Download Monthly Report</button>
+                <button className="input-box" onClick={() => navigate('/Download-Monthly-Report')}>Download Monthly Report</button>
               </div>
               <div className="col-6">
                 <button className="input-box" onClick={() => navigate('/loan-taken')}>Loan Taken</button>
@@ -97,13 +97,13 @@ const SavingsAccount = () => {
 
             <div className="row">
               <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/collect-savings')}>Collect Savings</button>
+                <button className="input-box" onClick={() => navigate('/depositform')}>Monthly Savings</button>
               </div>
               <div className="col-6">
                 <button className="input-box" onClick={() => navigate('/collect-installment')}>Collect Loan Installment</button>
               </div>
               <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/other-income')}>Other Income</button>
+                <button className="input-box" onClick={() => navigate('/other-income')}>Loan Waiver of the month</button>
               </div>
               <div className="col-6">
                 <button className="input-box" onClick={() => navigate('/other-expenses')}>Other Expenses</button>
@@ -112,7 +112,7 @@ const SavingsAccount = () => {
                 <button className="input-box" onClick={() => navigate('/member-registration')}>Member Registration</button>
               </div>
               <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/rules-notifications')}>Add Rules & Notifications</button>
+                <button className="input-box" onClick={() => navigate('/rules-notifications')}>Rules & Notifications</button>
               </div>
               <div className="col-6">
                 <button className="input-box" onClick={() => navigate('/penalty-settings')}>Set Penalty & Savings</button>
