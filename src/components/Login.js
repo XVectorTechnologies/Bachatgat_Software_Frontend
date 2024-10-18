@@ -38,9 +38,9 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Welcome to Bachatgat App!</h2>
+      <h2>Loksewa App</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="input-box">
           <label htmlFor="bachatgatCode">Bachatgat Code:</label>
           <input
             type="text"
@@ -51,7 +51,7 @@ const Login = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="input-box">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -62,7 +62,7 @@ const Login = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="input-box">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -72,12 +72,14 @@ const Login = () => {
             onChange={handleChange}
           />
         </div>
-
-        <button type="submit" onClick={TestAPI}>Login</button>
+        <div className="button">
+            <input type="submit" value="Login" />
+          </div>
+        
       </form>
 
       <div className="footer">
-        <a href='/register' style={{ marginRight: '20px' }}>Sign Up</a>
+        <a href='/member-registration' style={{ marginRight: '20px' }}>Sign Up</a>
         <a href="/forgot-password">Forgot Password?</a>
       </div>
     </div>
