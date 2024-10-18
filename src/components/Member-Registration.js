@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const Register = () => {
+const MemberRegistration = () => {
   const [formData, setFormData] = useState({
-    bachatgatCode: '',
-    startMonth: '',
+    name: '',
+    entryMonth: '',
+    entryYear: '',
+    Role: '',
     mobile: '',
     email: '',
     password: ''
@@ -27,26 +29,26 @@ const Register = () => {
 
   return (
     <div className="container">
-      <div className="title">Bachatgat Registration</div>
+      <div className="title">Member Registration</div>
       <div className="content">
         <form onSubmit={handleSubmit}>
           <div className="user-details">
-            <div className="input-box">
-              <span className="details"> Bachatgat Code</span>
+          <div className="input-box"  >
+              <span className="details"> Name</span>
               <input
                 type="text"
-                name=" bachatgatCode"
-                value={formData.bachatgatCode}
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
                 required
               />
             </div>
             <div className="input-box">
-            <span className="details">Start Month:</span>
+              <span className="details">Entry Month:</span>
           <select
-            id="startMonth"
-            name="startMonth"
-            value={formData.startMonth}
+            id="EntryMonth"
+            name="EntryMonth"
+            value={formData.EntryMonth}
             onChange={handleChange}
           >
             <option value=""></option>
@@ -67,11 +69,11 @@ const Register = () => {
         </div>
 
         <div className="input-box">
-        <span className="details">Start Year:</span>
+        <span className="details">Entry Year:</span>
           <select
-            id="startYear"
-            name="startYear"
-            value={formData.startYear}
+            id="EntryYear"
+            name="EntryYear"
+            value={formData.EntryYear}
             onChange={handleChange}
           >
             <option value=""></option>
@@ -88,7 +90,19 @@ const Register = () => {
             {/* Add more years */}
           </select>
         </div>
-    
+
+            <div className="input-box">
+            <span className="details">Role:</span>
+              <input
+                type="text"
+                id="role"
+                name="role"
+                value={formData.role}
+                onChange={handleChange}
+              />
+            </div>
+
+
         <div className="input-box">
         <span className="details">Mobile:</span>
           <input
@@ -126,7 +140,7 @@ const Register = () => {
             <input type="submit" value="Register" />
           </div>
           <div className="footer">
-        <a href='/login' style={{ marginRight: '20px' }}>Sign In</a>
+        <a href='/members' style={{ marginRight: '20px' }}>Sign In</a>
       </div>
         </form>
       </div>
@@ -134,4 +148,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default MemberRegistration;
