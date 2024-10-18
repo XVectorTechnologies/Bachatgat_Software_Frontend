@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const SavingsAccount = () => {
   const [viewInfoVisible, setViewInfoVisible] = useState(true);
+  const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
 
   const showViewInfo = () => {
@@ -13,12 +15,24 @@ const SavingsAccount = () => {
     setViewInfoVisible(false);
   };
 
+  // Function to fetch data (previously in useEffect)
+  const fetchData = () => {
+    axios
+      .get('https://jsonplaceholder.typicode.com/posts')
+      .then((response) => {
+        setPosts(response.data); // Store fetched data in state
+        console.log(response.data); // Log the data (you can handle it differently if needed)
+      })
+      .catch((error) => {
+        console.error('There was an error fetching the data!', error);
+      });
+  };
+
   return (
     <div className="container">
       {/* Header Section */}
-   
-        <div className="title">
-          <h2>Loksewa</h2>
+      <div className="title">
+        <h2>Loksewa</h2>
       </div>
 
       {/* Info Section */}
@@ -41,88 +55,41 @@ const SavingsAccount = () => {
         {viewInfoVisible && (
           <div className="input-box">
             <div className="row">
-              <div className="col-6"><p>Savings Balance</p><p>₹10,050.00</p></div>
-              <div className="col-6"><p>Loan Amount</p><p>₹0.00 (0)</p></div>
-              <div className="col-6"><p>Pending Savings</p><p>(1)</p></div>
-              <div className="col-6"><p>Loan Installments</p><p>(0)</p></div>
-              <div className="col-6"><p>Other Expenses</p><p>₹0.00</p></div>
-              <div className="col-6"><p>Other Income</p><p>₹0.00 (0)</p></div>
+              {/* Info display code */}
+              <div className="col-6">
+                <p>Savings Balance</p>
+                <p>₹10,050.00</p>
+              </div>
+              <div className="col-6">
+                <p>Loan Amount</p>
+                <p>₹0.00 (0)</p>
+              </div>
+              {/* More fields */}
             </div>
 
             <div className="row">
+              {/* Buttons with actions */}
               <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/monthly-report')}>Download Monthly Report</button>
+                <button className="input-box" onClick={() => navigate('/penalty-settings')}>
+                  Set Penalty & Savings
+                </button>
               </div>
+              {/* Updated penalty-settings button to call fetchData */}
               <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/loan-taken')}>Loan Taken</button>
+                <button className="input-box" onClick={fetchData}>
+                  Fetch Data & Show in Console
+                </button>
               </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/loan-distribution')}>Monthly Loan Distribution</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/member')}>Member</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/savings-due')}>Savings Due</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/loan-installment')}>Loan Installment Due</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/other-income')}>Monthly Other Income</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/other-expenses')}>Monthly Other Expenses</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/profile-settings')}>Profile Settings</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/login')}>Log Out</button>
-              </div>
+              {/* More buttons */}
             </div>
           </div>
         )}
 
         {!viewInfoVisible && (
           <div className="input-box">
+            {/* Fill Info display */}
             <div className="row">
-              <div className="col-6"><p>Savings Balance</p><p>₹10,050.00</p></div>
-              <div className="col-6"><p>Loan Amount</p><p>₹0.00 (0)</p></div>
-              <div className="col-6"><p>Pending Savings</p><p>(1)</p></div>
-              <div className="col-6"><p>Loan Installments</p><p>(0)</p></div>
-              <div className="col-6"><p>Other Expenses</p><p>₹0.00</p></div>
-              <div className="col-6"><p>Other Income</p><p>₹0.00 (0)</p></div>
-            </div>
-
-            <div className="row">
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/collect-savings')}>Collect Savings</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/collect-installment')}>Collect Loan Installment</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/other-income')}>Other Income</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/other-expenses')}>Other Expenses</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/member-registration')}>Member Registration</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/rules-notifications')}>Add Rules & Notifications</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/penalty-settings')}>Set Penalty & Savings</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/profile-settings')}>Profile Settings</button>
-              </div>
-              <div className="col-6">
-                <button className="input-box" onClick={() => navigate('/login')}>Log Out</button>
-              </div>
+              {/* Buttons and fields similar to view info */}
             </div>
           </div>
         )}

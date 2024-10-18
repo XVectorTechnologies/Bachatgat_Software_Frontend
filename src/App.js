@@ -6,6 +6,8 @@ import Home from './components/Home';
 import MemberRegistration from './components/Member-Registration';
 // import Members from './components/MembersPage'
 import MembersPage from './components/MembersPage';
+import ReportManager from "./components/ReportManager";
+
 
 
 
@@ -22,6 +24,7 @@ function App() {
         <Route path="/home" element={<Home/>} />
         <Route path="/member-registration" element={<MemberRegistration/>}/>
         <Route path="/members" element={<MembersPage/>}/>
+        <Route path="/ReportManager" element={<ReportManager/>} />
 
       </Routes>
     </div>
