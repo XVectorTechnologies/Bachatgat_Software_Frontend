@@ -1,0 +1,170 @@
+/* Basic styling for the members page and cards */
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-image: linear-gradient(135deg, #71b7e6, #71b7e6, #9b59b6);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1); /* Zoom in by 10% when hovered */
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+/* Responsive styles using media queries */
+
+/* For larger screens (above 1024px) */
+@media (min-width: 1025px) {
+  .container {
+    padding: 30px;
+  }
+
+  .card {
+    width: 300px; /* Default card size for large screens */
+  }
+
+  h2 {
+    font-size: 2.5rem; /* Larger heading for bigger screens */
+  }
+}
+
+/* For tablets and small desktops (1024px and below) */
+@media (max-width: 1024px) {
+  .card {
+      width: 250px; /* Make the cards slightly smaller */
+  }
+  
+  h2 {
+      font-size: 2rem; /* Keep heading large enough */
+      padding: 10px 0; /* Add padding */
+  }
+}
+
+/* For mobile devices (landscape and portrait) */
+@media (max-width: 768px) {
+  .grid {
+      flex-direction: column; /* Stack cards vertically */
+      align-items: center;
+  }
+
+  .card {
+      width: 90%; /* Take up most of the width on mobile devices */
+  }
+
+  h2 {
+      font-size: 2rem; /* Keep heading large enough for mobile */
+      margin: 20px 0; /* Add some margin */
+      padding-top: 55px;
+      padding-bottom: 0px;
+  }
+}
+
+/* For very small mobile screens (480px and below) */
+@media (max-width: 480px) {
+  .grid {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+
+  .card {
+    width: 100%; /* Take up full width */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .card h3 {
+    font-size: 1.2rem; /* Adjust the title size */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjust heading size */
+    margin-bottom: 15px; /* Add margin */
+    padding-top: 10px; /* Adjust padding */
+  }
+}
+
+/* For very small screens (max-width: 425px) */
+@media (max-width: 425px) {
+  .grid {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .card {
+      width: 95%; /* Full width for smaller screens */
+      padding: 12px; /* Reduce padding */
+  }
+
+  h2 {
+      font-size: 1.6rem; /* Adjust heading size for better readability */
+      margin: 20px 0; /* Slight margin adjustment */
+      padding-top: 15px;
+  }
+}
+
+/* For extra small screens (max-width: 375px) */
+@media (max-width: 375px) {
+  .grid {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .card {
+      width: 100%; /* Take full width */
+      padding: 10px; /* Further reduce padding */
+  }
+
+  h2 {
+      font-size: 1.5rem; /* Adjust heading size */
+      margin: 10px 0;
+      padding-top: 10px;
+  }
+}
+
+/* For extra-extra small screens (max-width: 320px) */
+@media (max-width: 320px) {
+  .grid {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .card {
+      width: 100%; /* Full width for very small devices */
+      padding: 10px;
+  }
+
+  h2 {
+      font-size: 1.4rem; /* Slightly reduce heading size */
+      margin: 10px 0;
+      padding-top: 10px;
+  }
+}
